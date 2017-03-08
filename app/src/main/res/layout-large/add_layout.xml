@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/dark_gray"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="280dp"
+            android:id="@+id/i"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/colorAccent"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_toRightOf="@+id/n"
+            android:id="@+id/vv"
+            android:layout_marginLeft="15dp"
+            android:background="@color/dark_gray"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:layout_toRightOf="@+id/vv"
+            android:layout_width="280dp"
+            android:hint="Candidate Name"
+            android:textSize="18dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true"
+            android:id="@+id/n"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_toRightOf="@+id/q"
+            android:id="@+id/v"
+            android:layout_marginLeft="5dp"
+            android:background="@color/dark_gray"
+            android:layout_height="match_parent"/>
+
+        <EditText
+
+            android:inputType="number"
+            android:layout_width="150dp"
+            android:hint="Enter Value"
+            android:paddingLeft="5dp"
+            android:background="@drawable/rectangle_blue"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@+id/v"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorAccent"
+            android:layout_centerVertical="true"
+            android:id="@+id/vl"
+            android:maxLength="6"
+            android:layout_height="40dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_toRightOf="@+id/v1"
+            android:id="@+id/v2"
+            android:layout_marginLeft="5dp"
+            android:background="@color/dark_gray"
+            android:layout_height="match_parent"/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/v2"
+            android:gravity="center"
+            android:id="@+id/lead"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

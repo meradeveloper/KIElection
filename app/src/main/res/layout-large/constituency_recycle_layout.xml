@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/dark_gray"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_toRightOf="@+id/vv"
+                android:layout_width="match_parent"
+                android:hint="Constituency Name"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                android:id="@+id/tvconstituency"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="match_parent" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_toRightOf="@+id/q"
+                android:id="@+id/v"
+                android:layout_marginLeft="5dp"
+                android:background="@color/dark_gray"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <EditText
+                android:maxLength="5"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:hint="Enter Code"
+                android:gravity="center|left"
+                android:padding="10dp"
+                android:background="@drawable/rectangle_blue"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/v"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/colorAccent"
+                android:layout_centerVertical="true"
+                android:id="@+id/etcode"
+                android:textSize="18sp"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_toRightOf="@+id/v1"
+                android:id="@+id/v2"
+                android:layout_marginLeft="5dp"
+                android:background="@color/dark_gray"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <EditText
+                android:maxLength="5"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:hint="Confirm Code"
+                android:gravity="center|left"
+                android:padding="10dp"
+                android:background="@drawable/rectangle_blue"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/v"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/colorAccent"
+                android:layout_centerVertical="true"
+                android:id="@+id/etconfirmcode"
+                android:textSize="18sp"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_toRightOf="@+id/v1"
+                android:id="@+id/v3"
+                android:layout_marginLeft="5dp"
+                android:background="@color/dark_gray"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

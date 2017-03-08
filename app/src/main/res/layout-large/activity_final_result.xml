@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:background="@color/colorAccent"
+            android:text="Result Decleration"
+            android:id="@+id/textView2" />
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/w"
+                android:textSize="20dp"
+                android:text="Select Winner:"
+                android:textColor="@color/colorAccent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/w"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+
+                    >
+
+                    <Spinner
+                        android:layout_marginTop="-10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/spinner"
+                        android:background="@null">
+
+
+                    </Spinner>
+
+                    <!--<EditText
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:focusable="false"
+                        android:paddingLeft="5dp"
+                        android:background="@null"
+                        android:hint="Select area"
+                        android:textSize="12dp"
+                        android:id="@+id/et_area_from"
+                        android:layout_toLeftOf="@+id/iv_drop1"/>-->
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/iv_drop1"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/dropdown"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/cardview_dark_background"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/res"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/white"
+        android:text="Submit Result"
+        android:textSize="25dp"
+        android:background="@color/colorAccent"/>
+</RelativeLayout>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/data_correction"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.in.kielection.DataCorrection">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:weightSum="2">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:id="@+id/rb_lead"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="Lead"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:id="@+id/rb_vote"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="10dp"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="Vote"/>
+
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:weightSum="2">-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rectangle_blue"
+                >
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:id="@+id/spin_candidate">
+
+
+                </Spinner>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/iv_drop1"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/drop_down"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/tv_lead"
+                android:layout_toLeftOf="@+id/submit_lead"
+                android:background="@drawable/rectangle_blue"
+                >
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spin_round"
+                    android:background="@null"
+                    >
+
+
+                </Spinner>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/iv_drop2"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/drop_down"
+                    />
+
+            </RelativeLayout>
+
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/llvotes"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:weightSum="2"
+            android:background="@drawable/rectangle_blue">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/etvotes"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:background="@null"
+                android:gravity="center|left"
+                android:paddingLeft="20dp"
+                android:hint="Enter Votes"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="Update"
+            android:background="@color/colorAccent"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,1411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        android:background="@drawable/blue"
+        android:layout_height="70dp">
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:textSize="25dp"
+            android:id="@+id/tv_sel_con"
+            android:textColor="@color/white"
+            android:text="Select Constituency"
+            android:textStyle="bold|italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+        <RelativeLayout
+
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:layout_width="70dp"
+            android:text="Logout"
+
+            android:id="@+id/logout"
+            android:onClick="LogoutAlert"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            android:layout_height="match_parent" >
+
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/logout"
+                android:layout_width="55dp"
+                android:layout_height="55dp" />
+
+        </RelativeLayout>
+
+        <!--<Spinner
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spin_round"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/logout">
+
+
+        </Spinner>-->
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spin_const"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_sel_con"
+            android:layout_toLeftOf="@+id/logout"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            >
+
+
+        </Spinner>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollv"
+        android:visibility="visible"
+        android:layout_below="@+id/textView"
+        android:paddingBottom="60dp">
+
+        <LinearLayout
+            android:id="@+id/rr"
+            android:layout_above="@+id/ll"
+            android:layout_below="@+id/textView"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_height="match_parent">
+
+
+            <!-- Status Section -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="2dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tv_Constituency_update"
+                    android:paddingRight="10dp"
+                    android:textSize="18sp"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/rectangle_red_fill"
+                    android:text="Constituency Update"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/tv_Constituency_update"
+                    android:layout_toLeftOf="@+id/submit_update"
+                    android:background="@drawable/rectangle_blue"
+                    >
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/spin_status"
+                        android:layout_toLeftOf="@+id/iv_drop"
+                        android:background="@null">
+
+
+                    </Spinner>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/iv_drop"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/drop_down"
+                        />
+
+                </RelativeLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Submit Update"
+                    android:padding="10dp"
+                    android:onClick="submitStatus"
+                    android:background="@drawable/rectangle_red_fill"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:id="@+id/submit_update"
+                    android:layout_alignParentRight="true"/>
+
+
+
+            </RelativeLayout>
+
+            <!--<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:padding="2dp"
+                android:background="@drawable/rectangle_blue">
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spin_status"
+                    android:layout_toLeftOf="@+id/iv_drop"
+                    android:background="@null">
+
+
+                </Spinner>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/iv_drop"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/drop_down"
+                    />
+
+            </RelativeLayout>-->
+
+            <!-- Lead Section -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lead Section"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white">
+
+
+                </TextView>
+
+                <Spinner
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spin_round1"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp">
+
+
+                </Spinner>
+
+
+
+            </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="2dp"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tv_lead"
+                    android:paddingRight="10dp"
+                    android:textSize="18sp"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/rectangle_red_fill"
+                    android:text="Leading Candidate"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/tv_lead"
+                    android:layout_toLeftOf="@+id/submit_lead"
+                    android:background="@drawable/rectangle_blue"
+                    >
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/spin_lead"
+                        android:padding="5dp"
+                        android:layout_toLeftOf="@+id/iv_drop1"
+                        android:background="@null">
+
+
+                    </Spinner>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/iv_drop1"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/drop_down"
+                        />
+
+                </RelativeLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Submit Lead"
+                    android:padding="10dp"
+                    android:background="@drawable/rectangle_red_fill"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:id="@+id/submit_lead"
+                    android:layout_alignParentRight="true"/>
+
+
+
+            </RelativeLayout>
+
+            <!-- voting Section -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vote Count Section"
+                    android:layout_centerVertical="true"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white">
+
+
+                </TextView>
+
+                <Spinner
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spin_round2"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp">
+
+
+                </Spinner>
+
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:background="@color/dark_gray"
+                android:layout_height="60dp">
+
+                <TextView
+                    android:textSize="20dp"
+                    android:layout_width="280dp"
+                    android:text="Party Name"
+                    android:id="@+id/n"
+                    android:textStyle="bold"
+                    android:gravity="center|left"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="match_parent" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_toRightOf="@+id/n"
+                    android:id="@+id/vv"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/white"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:textSize="20dp"
+                    android:layout_toRightOf="@+id/vv"
+                    android:layout_width="280dp"
+                    android:text="Candidate Name"
+                    android:gravity="center|left"
+
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/q"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="match_parent" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_toRightOf="@+id/q"
+                    android:id="@+id/v"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/white"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:textSize="20dp"
+                    android:layout_width="150dp"
+                    android:text="Value"
+                    android:gravity="center|left"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/v"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/p"
+
+                    android:layout_height="match_parent" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_toRightOf="@+id/q"
+                    android:id="@+id/v2"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/white"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Lead"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:gravity="center|left"
+                    android:textSize="20dp"
+                    android:layout_toRightOf="@+id/v"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/lead"
+
+                    android:layout_height="wrap_content" />
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ll_rec"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/RvList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/dark_gray"
+                    android:layout_height="1dp"/>
+
+            </LinearLayout>
+
+            <!-- Total Votes-->
+
+            <LinearLayout
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <!--<TextView
+                    android:layout_width="200dp"
+                    android:id="@+id/i"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_toRightOf="@+id/n"
+
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/dark_gray"
+                    android:layout_height="match_parent"/>-->
+                <TextView
+                    android:layout_toRightOf="@+id/vv"
+                    android:layout_width="match_parent"
+                    android:hint="Candidate Name"
+                    android:text="Total Votes"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/black"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_toRightOf="@+id/q"
+
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/dark_gray"
+                    android:layout_height="match_parent"/>
+
+                <EditText
+                    android:maxLength="6"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:hint="Total Votes"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:background="@drawable/rectangle_blue"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toRightOf="@+id/v"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/et_to_votes"
+                    android:enabled="false"
+                    android:layout_height="30dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_toRightOf="@+id/v1"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/dark_gray"
+                    android:layout_height="match_parent"/>
+
+
+
+
+            </LinearLayout>
+
+
+
+            <!--Image Upload Section-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorAccent"
+                android:layout_marginTop="30dp"
+                android:text="Image Upload Section"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white">
+
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:text="Image Upload..."
+                android:gravity="center|left"
+                android:textSize="30sp"
+                android:textColor="@color/colorAccent"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/lll"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rectangle_blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="220dp"
+                            android:layout_height="220dp"
+                            android:gravity="center"
+                            android:paddingTop="5dp"
+                            android:orientation="vertical"
+                            >
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/pic1"
+                                android:scaleType="fitXY"
+                                android:background="@drawable/uploadpic"
+                                android:onClick="selectPic"
+
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv1"
+                                android:visibility="gone"
+                                android:textColor="@color/white"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="Select Photo 1"/>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="cancel"
+                            android:gravity="center"
+                            android:onClick="imageCancel"
+                            android:id="@+id/tvcancel1"
+                            android:paddingTop="5dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:paddingBottom="5dp"
+                            android:background="@drawable/rectangle_blue"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginTop="5dp"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="@color/colorAccent"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:gravity="center"
+
+                            android:orientation="vertical"
+                            android:background="@drawable/circle_blue"
+                            >
+
+                            <com.example.in.kielection.Common.RoundedImageView
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent"
+                                android:id="@+id/pic2"
+                                android:onClick="selectPic"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                android:id="@+id/tv2"
+                                android:text="Select Photo 2"/>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="cancel"
+                            android:id="@+id/tvcancel2"
+                            android:onClick="imageCancel"
+                            android:paddingTop="5dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:paddingBottom="5dp"
+                            android:background="@drawable/rectangle_blue"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18sp"
+                            android:gravity="center"
+                            android:textColor="@color/colorAccent"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:background="@drawable/circle_blue"
+                            >
+
+                            <com.example.in.kielection.Common.RoundedImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/pic3"
+                                android:onClick="selectPic"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:id="@+id/tv3"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                android:text="Select Photo 3"/>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tvcancel3"
+                            android:onClick="imageCancel"
+                            android:text="cancel"
+                            android:paddingTop="5dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:paddingBottom="5dp"
+                            android:background="@drawable/rectangle_blue"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18sp"
+                            android:gravity="center"
+                            android:textColor="@color/colorAccent"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toRightOf="@+id/lll"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:textSize="20dp"
+                        android:text="Uploaded Summary"
+                        android:id="@+id/upload_sum"
+                        android:layout_weight="1"
+
+                        android:background="@drawable/blue"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="20dp"
+                        android:onClick="go"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp" />
+
+                    <Button
+                        android:textSize="20dp"
+                        android:text="Data Correction"
+                        android:layout_toRightOf="@+id/lll"
+                        android:layout_above="@+id/upload_sum"
+                        android:background="@drawable/blue"
+                        android:textColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="20dp"
+                        android:onClick="dataCorrection"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+
+
+
+            <CheckBox
+                android:textSize="25dp"
+                android:id="@+id/chCount"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:text="Counting Over"
+                android:layout_height="wrap_content" />
+            <Button
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/rr"
+                android:onClick="popUp"
+                android:layout_marginRight="1dp"
+                android:layout_width="300dp"
+                android:id="@+id/result"
+                android:textSize="25dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/white"
+                android:text="Final Result"
+                android:background="@color/colorAccent"
+                android:layout_height="60dp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl_no_result"
+        android:gravity="center"
+        android:layout_below="@+id/textView"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="No Result Found!"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_height="60dp">
+
+
+            <Button
+                android:onClick="clear"
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/reset"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:text="Reset"
+
+                android:background="@drawable/blue"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:onClick="Submit"
+                android:layout_marginRight="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/submit"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:text="Submit"
+
+                android:background="@drawable/blue"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/cordinator"
+        android:layout_height="wrap_content">
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
+    <!--<RelativeLayout
+
+        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        android:background="@color/colorAccent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:text="Election Data Collector"
+            android:textStyle="bold|italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+        <Button
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:text="Logout"
+            android:onClick="logout"
+            android:id="@+id/logout"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorPrimaryDark"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spin_round"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_toLeftOf="@+id/logout">
+
+
+        </Spinner>
+
+        <Spinner
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spin_const"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_toLeftOf="@+id/spin_round">
+
+
+        </Spinner>
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/scrollv"
+        android:layout_below="@+id/textView"
+        android:layout_marginBottom="60dp"
+
+        >
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="6dp"
+            android:layout_height="match_parent">
+
+            &lt;!&ndash; Lead Section &ndash;&gt;
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:padding="2dp"
+                android:background="@drawable/rectangle_blue">
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spin_lead"
+                    android:layout_toLeftOf="@+id/iv_drop1"
+                    android:background="@null">
+
+
+                </Spinner>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/iv_drop1"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/drop_down"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+
+                android:paddingBottom="6dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:background="@color/white"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="180dp"
+                    android:hint="Party Name"
+                    android:id="@+id/n"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_toRightOf="@+id/n"
+                    android:id="@+id/vv"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/dark_gray"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:layout_toRightOf="@+id/vv"
+                    android:layout_width="180dp"
+                    android:hint="Candidate Name"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/q"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_toRightOf="@+id/q"
+                    android:id="@+id/v"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/dark_gray"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:hint="Value"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/v"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/p"
+
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_toRightOf="@+id/q"
+                    android:id="@+id/v2"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/dark_gray"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:hint="Lead"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/v"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/lead"
+
+                    android:layout_height="wrap_content" />
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll_rec"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/RvList"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/llViews"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/dark_gray"
+                    android:visibility="gone"
+                    android:layout_height="1dp"/>
+
+            </LinearLayout>
+
+
+
+
+            &lt;!&ndash; Status Section &ndash;&gt;
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:padding="2dp"
+                    android:background="@drawable/rectangle_blue">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/spin_status"
+                        android:layout_toLeftOf="@+id/iv_drop"
+                        android:background="@null">
+
+
+                    </Spinner>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/iv_drop"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/drop_down"
+                        />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+            &lt;!&ndash;Image Upload Section&ndash;&gt;
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Image Upload..."
+                    android:gravity="center|left"
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/colorAccent"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:background="@drawable/circle_blue"
+                        >
+
+                        <com.example.in.kielection.Common.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/pic1"
+                            android:onClick="selectPic"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv1"
+                            android:textColor="@color/white"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Select Photo 1"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cancel"
+                        android:onClick="imageCancel"
+                        android:id="@+id/tvcancel1"
+                        android:padding="5dp"
+                        android:background="@drawable/rectangle_blue"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textColor="@color/colorAccent"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:background="@drawable/circle_blue"
+                        >
+
+                        <com.example.in.kielection.Common.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/pic2"
+                            android:onClick="selectPic"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/tv2"
+                            android:text="Select Photo 2"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cancel"
+                        android:id="@+id/tvcancel2"
+                        android:onClick="imageCancel"
+                        android:padding="5dp"
+                        android:background="@drawable/rectangle_blue"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textColor="@color/colorAccent"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:background="@drawable/circle_blue"
+                        >
+
+                        <com.example.in.kielection.Common.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/pic3"
+                            android:onClick="selectPic"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:id="@+id/tv3"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Select Photo 3"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvcancel3"
+                        android:onClick="imageCancel"
+                        android:text="cancel"
+                        android:padding="5dp"
+                        android:background="@drawable/rectangle_blue"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textColor="@color/colorAccent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <CheckBox
+                android:textSize="20dp"
+                android:id="@+id/chCount"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:text="Counting Over"
+                android:layout_height="wrap_content" />
+            <Button
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/rr"
+                android:onClick="popUp"
+                android:layout_marginRight="1dp"
+                android:layout_width="150dp"
+                android:id="@+id/result"
+                android:textSize="18dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/white"
+                android:text="Final Result"
+                android:background="@color/colorAccent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_height="40dp">
+
+            <Button
+                android:onClick="Submit"
+                android:layout_marginRight="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/submit"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:text="Submit"
+                android:background="@color/colorAccent"
+                android:layout_height="match_parent" />
+            <Button
+                android:onClick="clear"
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/reset"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:text="Reset"
+                android:background="@color/colorAccent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/cordinator"
+        android:layout_height="wrap_content">
+
+
+    </android.support.design.widget.CoordinatorLayout>-->
+</RelativeLayout>

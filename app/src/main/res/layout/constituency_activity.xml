@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:id="@+id/rl_header"
+        android:background="@color/colorAccent"
+        android:layout_height="60dp">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:text="Election Data Collector"
+            android:textStyle="bold|italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+        <Button
+
+            android:layout_width="wrap_content"
+            android:text="Submit"
+            android:layout_centerVertical="true"
+            android:id="@+id/logout"
+            android:layout_marginRight="10dp"
+            android:onClick="submitConstituency"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/rectangle_blue_fill"
+            android:layout_height="wrap_content" />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_header"
+        android:layout_above="@+id/rl_submit">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rec_constituency">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/rl_submit"
+        android:layout_alignParentBottom="true"
+        android:weightSum="2"
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SUBMIT"
+            android:layout_weight="1"
+            android:onClick="submitConstituency"
+            android:gravity="center"
+            android:background="@color/colorAccent"
+            android:textSize="18sp"
+            android:textColor="@color/white"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SKIP"
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="skipConstituency"
+            android:background="@color/colorAccent"
+            android:textSize="18sp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_marginTop="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:paddingLeft="5dp"
+        android:id="@+id/et"
+        android:enabled="false"
+        android:layout_width="212dp"
+        android:background="@drawable/rectangle_blue"
+        android:layout_height="30dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/yes"
+            android:checked="true"
+            android:textSize="18dp"
+            android:textColor="@color/colorAccent"
+            android:text="Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/no"
+            android:textSize="18dp"
+            android:layout_marginLeft="5dp"
+            android:text="No"
+            android:textColor="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+</LinearLayout>
